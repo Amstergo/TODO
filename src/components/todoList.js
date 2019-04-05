@@ -1,8 +1,6 @@
 import React from "react";
 
 const TodoList = ({ todos, deleteTodo }) => {
-  console.log(todos);
-
   return (
     <div>
       {todos.map((todo, index) => (

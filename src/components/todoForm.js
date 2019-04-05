@@ -1,25 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+
+import UseInputState from "./useInputState";
 
 const TodoForm = ({ saveTodo }) => {
-  const [value, setValue] = useState("");
-
-  console.log(useState());
-  console.log("value - " + value);
-
-  const getEnter = e => {
-    setValue(e.target.value);
-  };
+  const { value, reset, onChange } = UseInputState("");
 
   const addTodo = e => {
     e.preventDefault();
 
     saveTodo(value);
-    setValue("");
+    reset();
   };
 
   return (
     <form onSubmit={addTodo}>
-      <input placeholder="Add todo" onChange={getEnter} value={value} />
+      <input placeholder="Add todo" onChange={onChange} value={value} />
     </form>
   );
 };
