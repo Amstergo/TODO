@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import TodoForm from "./components/todoForm";
 import TodoList from "./components/todoList";
+import UseTodoState from "./components/useTodoState";
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const { todos, addTodo, deleteTodo } = UseTodoState([]);
 
   return (
     <div>
@@ -13,18 +14,11 @@ const App = () => {
           const trimedTodo = todo.trim();
 
           if (trimedTodo) {
-            setTodos([...todos, trimedTodo]);
+            addTodo(trimedTodo);
           }
         }}
       />
-      <TodoList
-        todos={todos}
-        deleteTodo={todoIndex => {
-          const newTodos = todos.filter((_, index) => index !== todoIndex);
-
-          setTodos(newTodos);
-        }}
-      />
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 };
