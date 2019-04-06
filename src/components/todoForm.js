@@ -1,4 +1,5 @@
 import React from "react";
+import { Input } from "antd";
 
 import UseInputState from "./useInputState";
 
@@ -14,7 +15,12 @@ const TodoForm = ({ saveTodo }) => {
 
   return (
     <form onSubmit={addTodo}>
-      <input placeholder="Add todo" onChange={onChange} value={value} />
+      <Input
+        placeholder="Add todo"
+        allowClear
+        onChange={onChange}
+        value={value}
+      />
     </form>
   );
 };
