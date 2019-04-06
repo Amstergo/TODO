@@ -4,6 +4,9 @@ import TodoForm from "./components/todoForm";
 import TodoList from "./components/todoList";
 import UseTodoState from "./components/useTodoState";
 
+import "antd/dist/antd.css";
+import GlobalStyles from "./utils/global";
+
 const App = () => {
   const { todos, addTodo, deleteTodo } = UseTodoState([]);
 
@@ -19,6 +22,7 @@ const App = () => {
         }}
       />
       <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <GlobalStyles />
     </div>
   );
 };

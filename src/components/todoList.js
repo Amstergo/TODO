@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, Icon } from "antd";
 
 const TodoList = ({ todos, deleteTodo }) => {
   return (
@@ -6,14 +7,15 @@ const TodoList = ({ todos, deleteTodo }) => {
       {todos.map((todo, index) => (
         <div key={index.toString()}>
           <span>{todo}</span>
-          <button
+          <Button
+            type="primary"
             aria-label="delete"
             onClick={() => {
               deleteTodo(index);
             }}
           >
-            X
-          </button>
+            <Icon type="delete" />
+          </Button>
         </div>
       ))}
     </div>
