@@ -5,7 +5,7 @@ export default initialValue => {
 
   return {
     collapsed,
-    onCollapse: collapsed => {
+    SwitchCollapse: collapsed => {
       setCollapsed(collapsed => !collapsed);
     }
   };
