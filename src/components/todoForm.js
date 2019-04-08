@@ -1,7 +1,7 @@
 import React from "react";
 import { Input } from "antd";
 
-import UseInputState from "./useInputState";
+import UseInputState from "../hooks/useInputState";
 
 const TodoForm = ({ saveTodo }) => {
   const { value, reset, onChange } = UseInputState("");

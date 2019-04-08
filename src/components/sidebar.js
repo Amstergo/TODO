@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Menu, Icon, Typography } from "antd";
 import styled from "styled-components";
 
-import UseCollapseState from "./useCollapseState";
+import UseCollapseState from "../hooks/useCollapseState";
 
 const { Sider } = Layout;
 const { Title } = Typography;
